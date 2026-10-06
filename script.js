@@ -1,9 +1,9 @@
 let selectedEventType = 'Boda';
 let guestsCount = 100;
-const whatsappPhone = "525500000000"; // Reemplaza con tu número de WhatsApp real
+const whatsappPhone = "525500000000"; 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar iconos de Lucide si está disponible
+    
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
