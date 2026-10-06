@@ -737,16 +737,47 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-brand-dark text-white py-12 border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <div class="flex items-center justify-center gap-2">
-            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-rose to-brand-gold flex items-center justify-center text-white">
-                <i data-lucide="cake" class="w-5 h-5"></i>
+<footer class="bg-slate-900 text-white py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            
+            <!-- Columna 1: Nombre de la Empresa y Descripción -->
+            <div>
+                <h3 class="text-2xl font-black tracking-wider text-brand-accent mb-3">
+                    SNACK PARADISE
+                </h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Elevamos la experiencia de tu evento con carritos de snacks, barras dulces y saladas con montaje profesional.
+                </p>
             </div>
-            <span class="font-title text-lg font-bold">Empresa - Mesas de Eventos & Carritos</span>
+
+            <!-- Columna 2: Enlaces Rápidos -->
+            <div>
+                <h4 class="text-lg font-bold text-slate-200 mb-3">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-sm text-slate-400">
+                    <li><a href="#servicios" class="hover:text-brand-accent transition-colors">Servicios</a></li>
+                    <li><a href="#cotizador" class="hover:text-brand-accent transition-colors">Cotizador</a></li>
+                    <li><a href="#terminos" class="hover:text-brand-accent transition-colors">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div>
+                <h4 class="text-lg font-bold text-slate-200 mb-3">Contacto</h4>
+                <p class="text-slate-400 text-sm mb-2">Cobertura en CDMX y Área Metropolitana.</p>
+                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-brand-accent"></i>
+                    <span>Atención inmediata por WhatsApp</span>
+                </div>
+            </div>
+
         </div>
-        <p class="text-xs text-slate-400">Haciendo de tu celebración un momento inolvidable.</p>
-        <p class="text-[11px] text-slate-500">© 2026 Todos los derechos reservados.</p>
+
+        <!-- Línea divisoria y Derechos de autor -->
+        <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <p>&copy; 2026 Snack Paradise. Todos los derechos reservados.</p>
+            <p>Diseñado para eventos inolvidables</p>
+        </div>
     </div>
 </footer>
 
