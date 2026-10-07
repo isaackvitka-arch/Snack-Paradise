@@ -1,6 +1,6 @@
 let selectedEventType = 'Boda';
 let guestsCount = 100;
-const whatsappPhone = "525500000000"; 
+const whatsappPhone = "525659145042"; 
 
 document.addEventListener('DOMContentLoaded', () => {
     
