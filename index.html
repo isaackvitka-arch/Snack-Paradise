@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es-MX" data-type="service" data-radius="round" data-buttons="pill" data-motion>
+<html lang="es-MX" data-type="service" data-radius="soft" data-buttons="pill" data-motion>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,7 +12,7 @@
 <meta property="og:image" content="share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/logo-snack-paradise-web.png" type="image/png">
-<meta name="theme-color" content="#c4245e">
+<meta name="theme-color" content="#16110f">
 <!-- <link rel="canonical" href="https://[dominio del cliente]/"> -->
 <meta name="site-kind" content="other">
 <meta name="page-type" content="service">
@@ -24,7 +24,7 @@
   "name": "Snack Paradise",
   "slogan": "Sabores móviles, sonrisas fijas",
   "description": "Carritos de snacks y mesas de dulces con montaje y staff para eventos sociales y corporativos.",
-  "image": "img/web/hero-mesa.jpg",
+  "image": "img/web/carrito-dulce.jpg",
   "telephone": "+52 56 5914 5042",
   "priceRange": "$$",
   "areaServed": ["Ciudad de México", "Área Metropolitana del Valle de México"],
@@ -34,30 +34,25 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Libre+Franklin:wght@400..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Caveat+Brush&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
 <link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
 <link rel="stylesheet" href="assets/layout/layout.css">
-<link rel="stylesheet" href="assets/icons/icon.css">
 <link rel="stylesheet" href="assets/moments/photo-chapters/moment.css">
 <style>
 :root {
-  --p-bg: #fff6ef; --p-surface: #fbe3e6; --p-ink: #2b1611; --p-muted: #6e524a;
-  --p-accent: #c4245e; --p-accent-ink: #fff6ef; --p-action: #2b1611; --p-action-ink: #fff6ef;
-  --p-inv-bg: #2b1611; --p-inv-surface: #3c241d; --p-inv-ink: #fff6ef; --p-inv-muted: #d8c0b6;
-  --p-inv-accent: #e8a33d; --p-inv-accent-ink: #2b1611; --p-inv-action: #e8a33d; --p-inv-action-ink: #2b1611;
-  --brand: #c4245e; --brand-deep: #9f1a4a; --caramel: #e8a33d; --pistachio: #b9d8a0; --milk: #fbe3e6; --cream: #fff6ef;
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
-  --font-text: "Libre Franklin", system-ui, sans-serif;
-  --display-weight: 700;
-  --display-tracking: -0.035em;
-  --display-tracking-xl: -0.04em;
+  --p-bg: #16110f; --p-surface: #221a16; --p-ink: #f6efe6; --p-muted: #bcae9f;
+  --p-accent: #ff2e88; --p-accent-ink: #16110f; --p-action: #d9ff3d; --p-action-ink: #16110f;
+  --p-inv-bg: #16110f; --p-inv-surface: #221a16; --p-inv-ink: #f6efe6; --p-inv-muted: #bcae9f;
+  --p-inv-accent: #ff2e88; --p-inv-accent-ink: #16110f; --p-inv-action: #d9ff3d; --p-inv-action-ink: #16110f;
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-text: "Hanken Grotesk", system-ui, sans-serif;
+  --display-weight: 900;
+  --display-tracking: -0.01em;
+  --display-tracking-xl: -0.015em;
 }
 </style>
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="assets/backgrounds/backgrounds.js"></script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
@@ -66,20 +61,22 @@
 </head>
 <body>
 <!-- type: service (empresa contratada para eventos: carritos de snacks y mesas de dulces)
-     look: a dessert and snack caterer for events: rosa mexicano for the celebration, chocolate in place of black, caramel for
-           prices and buttons, vanilla ground, strawberry-milk bands and pistachio tags. A premium chocolate hero: serif italic accent
-           (the logo's serif), the cart in an arched frame with a caramel hairline, the seal, a still row of event types, sales cards with the price on the photograph, a full-bleed photo band.
+     look: the candy stall at La Merced: stall-shade ground, fluorescent card price stars, marker lettering, poster caps.
      moments: photo-chapters in #proceso -->
 
-<header class="nav nav--centre">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="burst" viewBox="0 0 100 100"><path d="M50 0L59.1 10L71.7 5L75.6 17.9L89.1 18.8L86.9 32.2L98.7 38.9L91 50L98.7 61.1L86.9 67.8L89.1 81.2L75.6 82.1L71.7 95L59.1 90L50 100L40.9 90L28.3 95L24.4 82.1L10.9 81.2L13.1 67.8L1.3 61.1L9 50L1.3 38.9L13.1 32.2L10.9 18.8L24.4 17.9L28.3 5L40.9 10Z"/></symbol>
+</svg>
+
+<header class="nav nav--centre sp-nav">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top">Saltar al contenido</a>
-    <a class="nav__logo" href="#top"><span class="sp-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="16"/><path d="M9.5 12.5h13l-1.4-3h-10.2zM11 12.5v9.5h10v-9.5M13 22v-4.5h6V22" fill="none" stroke="#fff6ef" stroke-width="1.6" stroke-linejoin="round"/></svg></span>Snack Paradise</a>
+    <a class="nav__logo" href="#top"><span class="sp-logo"><img src="img/logo-snack-paradise-web.png" alt="" width="64" height="64"></span>Snack Paradise</a>
     <nav class="nav__links" aria-label="Principal">
       <div class="nav__item"><a class="nav__link" href="#carritos">Carritos</a></div>
+      <div class="nav__item"><a class="nav__link" href="#incluye">Qué incluye</a></div>
       <div class="nav__item"><a class="nav__link" href="#proceso">Proceso</a></div>
       <div class="nav__item"><a class="nav__link" href="#politicas">Políticas</a></div>
-      <div class="nav__item"><a class="nav__link" href="#incluye">Qué incluye</a></div>
     </nav>
     <div class="nav__actions">
       <a class="btn btn--primary" href="#cotizador">Cotizar mi evento</a>
@@ -92,163 +89,162 @@
 
 <main id="top">
 
-  <section class="hero hero--sp" data-enter aria-labelledby="hero-h">
+  <section class="hero mx-hero" data-enter aria-labelledby="hero-h">
+    <img class="layer mx-hero__img" src="img/web/carrito-dulce.jpg" alt="Charolas del carrito dulce llenas de fresas, chocolates, cereal de colores y chispas" fetchpriority="high" data-source="client" data-subject="carrito dulce">
     <div class="wrap">
-      <div class="hero-text hero-split sp-hero">
-        <div class="hero-copy sp-hero__text">
-          <p class="sp-hero__eyebrow">Carritos para eventos en CDMX y Área Metropolitana</p>
-          <h1 id="hero-h">Carritos de snacks que <em>hacen la fiesta</em></h1>
-          <p class="hero__lead">Esquites, dorilocos, charcutería, paletas y mesas de dulces. Llegamos, montamos, servimos a tus invitados y nos llevamos todo.</p>
+      <div class="hero-text mx-hero__grid">
+        <div class="mx-hero__copy">
+          <h1 id="hero-h">Carritos de snacks <span>y mesas de dulces</span></h1>
+          <p class="mx-hero__lead">Para bodas, XV años y fiestas en CDMX. Llegamos, montamos, dos personas sirven a tus invitados y nos llevamos todo.</p>
           <div class="btn-row"><a class="btn btn--primary" href="#cotizador">Cotizar mi evento<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#carritos">Ver los carritos</a></div>
-          <dl class="sp-hero__facts">
-            <div><dt>Desde</dt><dd>$2,250 <small>30 invitados</small></dd></div>
-            <div><dt>Staff</dt><dd>2 personas</dd></div>
-            <div><dt>Servicio</dt><dd>2 horas</dd></div>
-          </dl>
         </div>
-        <div class="hero-visual ly-collage sp-gallery" data-enter-media>
-          <figure class="sp-gallery__arch"><img src="img/web/hero-mesa.jpg" alt="Carrito blanco de Snack Paradise con charolas de botanas, salsas y vasos" fetchpriority="high" data-source="client" data-subject="carrito de snacks"></figure>
-          <figure class="sp-gallery__b"><img src="img/web/carrito-dulce.jpg" alt="Charolas con fresas, chocolates, cereal de colores y chispas" fetchpriority="high" data-source="client" data-subject="carrito dulce"></figure>
-          <figure class="sp-gallery__c"><img src="img/web/fiesta-alberca.jpg" alt="Carrito de snacks junto a una alberca en una fiesta infantil" fetchpriority="high" data-source="client" data-subject="carrito en fiesta"></figure>
-          <div class="sp-seal" aria-hidden="true">
-            <svg class="sp-seal__ring" viewBox="0 0 200 200"><defs><path id="seal-path" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs><text><textPath href="#seal-path" textLength="472" lengthAdjust="spacing">Sabores móviles · Sonrisas fijas · Snack Paradise · </textPath></text></svg>
-            <svg class="sp-seal__cart" viewBox="0 0 32 32"><path d="M8 11h16l-1.6-3.5H9.6zM10 11v12h12V11M13 23v-5.5h6V23" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
+        <a class="mx-star mx-star--hero" href="#cotizador" aria-label="Desde 2,250 pesos por 30 invitados: abrir el cotizador">
+          <svg aria-hidden="true"><use href="#burst"/></svg>
+          <span class="mx-star__in"><small>desde</small><b>$2,250</b><small>30 invitados</small></span>
+        </a>
       </div>
-      <ul class="hero-strip sp-events" aria-label="Eventos que atendemos">
-        <li>Bodas</li><li>XV años</li><li>Cumpleaños</li><li>Bautizos</li><li>Baby showers</li><li>Corporativos</li><li>Fiestas infantiles</li>
+      <ul class="hero-strip mx-tags" aria-label="Precios de los carritos para 30 invitados">
+        <li><a href="#carritos"><span>Esquites</span><b>$2,250</b></a></li>
+        <li><a href="#carritos"><span>Dorilocos</span><b>$2,400</b></a></li>
+        <li><a href="#carritos"><span>Paletas</span><b>$2,550</b></a></li>
+        <li><a href="#carritos"><span>Snacks</span><b>$2,700</b></a></li>
       </ul>
     </div>
   </section>
 
-  <section class="section g2" id="carritos" aria-labelledby="carritos-h">
+  <section class="section g2 mx-carts" id="carritos" aria-labelledby="carritos-h">
     <div class="wrap">
       <div class="group">
-        <div class="section-head">
-          <h2 id="carritos-h">Elige tu <span class="sp-ink-brand">carrito</span></h2>
-          <div class="sp-incl"><p>Precio cerrado para 30 invitados. Todos incluyen:</p>
-          <ul class="sp-chips" aria-label="Incluido en cada carrito"><li>2 horas de servicio</li><li>2 personas de staff</li><li>Montaje y retiro</li><li>Desechables</li></ul></div>
+        <div class="mx-head">
+          <h2 id="carritos-h">Elige tu carrito</h2>
+          <p>Precio cerrado para 30 invitados. Cada uno incluye dos horas de servicio, dos personas de staff, montaje, retiro y desechables.</p>
         </div>
-        <div class="grid carts">
-          <article class="tile cart span-3" data-tint="brand">
-            <div class="cart__media"><img src="img/web/carrito-snacks.jpg" alt="Carrito de snacks con charolas de frituras, gomitas y cacahuates" loading="lazy" data-source="client" data-subject="Snacks"><span class="cart__tag">Refill ilimitado</span><span class="cart__price"><b>$2,700</b><small>30 invitados</small></span></div>
-            <div class="cart__body"><h3>Snacks</h3><p>14 snacks de más de 50 opciones y nueve salsas.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Snacks%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+        <div class="mx-grid">
+          <article class="mx-cart" data-tint="pink">
+            <div class="mx-cart__media"><img src="img/web/carrito-snacks.jpg" alt="Carrito de snacks con charolas de frituras, gomitas y cacahuates" loading="lazy" data-source="client" data-subject="Snacks"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$2,700</b></span></span></div>
+            <h3>Snacks</h3><p>14 snacks de más de 50 opciones, nueve salsas y refill ilimitado.</p>
+            <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Snacks%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
           </article>
-          <article class="tile cart span-3" data-tint="caramel">
-            <div class="cart__media"><img src="img/web/carrito-dori.jpg" alt="Mesa de dorilocos con bolsas de Doritos y toppings" loading="lazy" data-source="client" data-subject="Dorilocos"><span class="cart__tag">3 sabores de Doritos</span><span class="cart__price"><b>$2,400</b><small>30 invitados</small></span></div>
-            <div class="cart__body"><h3>Dorilocos</h3><p>Ocho toppings entre fruta, gomitas y cacahuates.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Dorilocos%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+          <article class="mx-cart" data-tint="lime">
+            <div class="mx-cart__media"><img src="img/web/carrito-dori.jpg" alt="Mesa de dorilocos con bolsas de Doritos y toppings" loading="lazy" data-source="client" data-subject="Dorilocos"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$2,400</b></span></span></div>
+            <h3>Dorilocos</h3><p>Tres sabores de Doritos y ocho toppings entre fruta, gomitas y cacahuates.</p>
+            <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Dorilocos%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
           </article>
-          <article class="tile cart span-3" data-tint="pistachio">
-            <div class="cart__media"><img src="img/web/esquites.jpg" alt="Vasos de esquites con mayonesa, queso y chile" loading="lazy" data-source="client" data-subject="Esquites"><span class="cart__tag">El de menor precio</span><span class="cart__price"><b>$2,250</b><small>30 invitados</small></span></div>
-            <div class="cart__body"><h3>Esquites</h3><p>Dos quesos, chile del que pica y del que no, y moronita.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Esquites%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+          <article class="mx-cart" data-tint="orange">
+            <div class="mx-cart__media"><img src="img/web/esquites.jpg" alt="Vasos de esquites con mayonesa, queso y chile" loading="lazy" data-source="client" data-subject="Esquites"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$2,250</b></span></span></div>
+            <h3>Esquites</h3><p>Dos quesos, chile del que pica y del que no, y moronita.</p>
+            <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Esquites%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
           </article>
-          <article class="tile cart span-3" data-tint="brand">
-            <div class="cart__media"><img src="img/web/brochetas.jpg" alt="Brochetas de fruta cubiertas de chocolate" loading="lazy" data-source="client" data-subject="Choco brochetas"><span class="cart__tag">Chocolate Turín</span><span class="cart__price"><b>$2,940</b><small>30 invitados</small></span></div>
-            <div class="cart__body"><h3>Choco brochetas</h3><p>Fresa, uva, zarzamora y plátano con cuatro toppings.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Choco%20Brochetas%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+          <article class="mx-cart" data-tint="pink">
+            <div class="mx-cart__media"><img src="img/web/brochetas.jpg" alt="Brochetas de fruta cubiertas de chocolate" loading="lazy" data-source="client" data-subject="Choco brochetas"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$2,940</b></span></span></div>
+            <h3>Choco brochetas</h3><p>Fresa, uva, zarzamora y plátano en chocolate Turín, con cuatro toppings.</p>
+            <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Choco%20Brochetas%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
           </article>
         </div>
       </div>
-      <div class="grid carts">
-        <article class="tile cart span-3" data-tint="caramel">
-          <div class="cart__media"><img src="img/web/charcuteria.jpg" alt="Carrito de charcutería con carnes frías, quesos y panes" loading="lazy" data-source="client" data-subject="Charcutería"><span class="cart__tag">Refill ilimitado</span><span class="cart__price"><b>$3,900</b><small>30 invitados</small></span></div>
-          <div class="cart__body"><h3>Charcutería</h3><p>Carnes frías, quesos, panes y mermeladas. Premium $5,400.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Charcuter%C3%ADa%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+      <div class="mx-grid">
+        <article class="mx-cart" data-tint="lime">
+          <div class="mx-cart__media"><img src="img/web/charcuteria.jpg" alt="Carrito de charcutería con carnes frías, quesos y panes" loading="lazy" data-source="client" data-subject="Charcutería"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$3,900</b></span></span></div>
+          <h3>Charcutería</h3><p>Carnes frías, quesos, panes y mermeladas con refill. Premium $5,400.</p>
+          <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Charcuter%C3%ADa%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
         </article>
-        <article class="tile cart span-3" data-tint="pistachio">
-          <div class="cart__media"><img src="img/web/paletas-heladas.jpg" alt="Paletas heladas de varios sabores" loading="lazy" data-source="client" data-subject="Paletas heladas"><span class="cart__tag">5 sabores</span><span class="cart__price"><b>$2,550</b><small>30 invitados</small></span></div>
-          <div class="cart__body"><h3>Paletas heladas</h3><p>De agua o de leche, con chamoy, chocolate o Lechera.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Paletas%20Heladas%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+        <article class="mx-cart" data-tint="orange">
+          <div class="mx-cart__media"><img src="img/web/paletas-heladas.jpg" alt="Paletas heladas de varios sabores" loading="lazy" data-source="client" data-subject="Paletas heladas"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$2,550</b></span></span></div>
+          <h3>Paletas heladas</h3><p>Cinco sabores de agua o de leche, con chamoy, chocolate o Lechera.</p>
+          <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Paletas%20Heladas%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
         </article>
-        <article class="tile cart span-3" data-tint="brand">
-          <div class="cart__media"><img src="img/web/fresas-con-crema.jpg" alt="Vaso de fresas con crema con el sello de Snack Paradise" loading="lazy" data-source="client" data-subject="Fresas con crema"><span class="cart__tag">Salsas ilimitadas</span><span class="cart__price"><b>$2,850</b><small>30 invitados</small></span></div>
-          <div class="cart__body"><h3>Fresas con crema</h3><p>Lechera, Nutella, cajeta y Hershey’s, con cinco toppings.</p><a class="cart__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Fresas%20con%20Crema%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a></div>
+        <article class="mx-cart" data-tint="pink">
+          <div class="mx-cart__media"><img src="img/web/fresas-con-crema.jpg" alt="Vaso de fresas con crema con el sello de Snack Paradise" loading="lazy" data-source="client" data-subject="Fresas con crema"><span class="mx-star mx-star--cart" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>$2,850</b></span></span></div>
+          <h3>Fresas con crema</h3><p>Lechera, Nutella, cajeta y Hershey’s ilimitados, con cinco toppings.</p>
+          <a class="mx-cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20me%20interesa%20el%20Carrito%20de%20Fresas%20con%20Crema%20para%20mi%20evento.%20Fecha%3A%20%2C%20lugar%3A%20%2C%20invitados%3A%20" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
         </article>
-        <article class="tile cart span-3" data-tint="caramel">
-          <div class="cart__media"><img src="img/web/mesas-dulces.jpg" alt="Mesa de dulces con postres y flores" loading="lazy" data-source="client" data-subject="Mesa de dulces"><span class="cart__tag">30 a 300 invitados</span><span class="cart__price"><b>A tu</b><small>medida</small></span></div>
-          <div class="cart__body"><h3>Mesa de dulces</h3><p>Barra dulce, barra salada o las dos, armada a tu medida.</p><a class="cart__cta" href="#cotizador">Calcular en el cotizador</a></div>
+        <article class="mx-cart" data-tint="lime">
+          <div class="mx-cart__media"><img src="img/web/mesas-dulces.jpg" alt="Mesa de dulces con postres y flores" loading="lazy" data-source="client" data-subject="Mesa de dulces"><span class="mx-star mx-star--cart mx-star--word" aria-hidden="true"><svg><use href="#burst"/></svg><span class="mx-star__in"><b>a tu medida</b></span></span></div>
+          <h3>Mesa de dulces</h3><p>Barra dulce, barra salada o las dos, de 30 a 300 invitados.</p>
+          <a class="mx-cta" href="#cotizador">Calcular en el cotizador</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section sp-band" id="incluye" aria-labelledby="incluye-h">
-    <img class="layer sp-band__img" src="img/web/fiesta-elegante.jpg" alt="" aria-hidden="true" loading="lazy" data-source="client" data-subject="carrito en salón de eventos">
+  <section class="section mx-incl" id="incluye" aria-labelledby="incluye-h">
     <div class="wrap">
-      <div class="grid">
-        <div class="sp-band__box span-5">
+      <div class="mx-incl__grid">
+        <div class="mx-incl__copy">
           <h2 id="incluye-h">Tú disfrutas. Nosotros servimos.</h2>
-          <ul class="sp-checks">
-            <li>Llegamos una hora antes a montar</li>
+          <ul class="mx-incl__list">
+            <li>Llegamos de 1.5 a 2 horas antes a montar</li>
             <li>Dos personas de staff por carrito</li>
             <li>Dos horas de servicio a tus invitados</li>
             <li>Vasos, cucharas y servilletas incluidos</li>
             <li>Una vela de chispas para el festejado</li>
             <li>Al terminar, retiramos todo</li>
           </ul>
-          <a class="link" href="#proceso">Cómo trabajamos</a>
         </div>
+        <figure class="mx-incl__pic"><img src="img/web/fiesta-elegante.jpg" alt="Carrito de snacks montado en un salón de eventos con mesas puestas" loading="lazy" data-source="client" data-subject="carrito en salón de eventos"></figure>
       </div>
     </div>
   </section>
 
-  <section class="section ground-inverse sp-steps" id="proceso" data-moment="photo-chapters" aria-labelledby="proceso-h">
+  <section class="section mx-steps" id="proceso" data-moment="photo-chapters" aria-labelledby="proceso-h">
     <div class="wrap mo-ph">
-      <div class="mo-ph__head"><h2 id="proceso-h">De la cotización <span class="sp-ink-caramel">al último invitado</span></h2><p>Cuatro pasos, cada uno confirmado por escrito.</p></div>
+      <div class="mo-ph__head"><h2 id="proceso-h">De la cotización al último invitado</h2><p>Cuatro pasos, cada uno confirmado por escrito.</p></div>
       <ol class="mo-ph__list">
         <li class="mo-ph__ch">
           <figure class="mo-ph__pic"><img src="img/web/vaso-logo.jpg" alt="Vaso de Snack Paradise lleno de botanas con salsa" width="1200" height="1600" data-source="client" data-subject="vaso con logotipo"></figure>
-          <h3><span class="sp-step">01</span>Cotiza</h3>
+          <h3>Cotiza</h3>
           <p>Arma tu evento en el cotizador o mándanos por WhatsApp la fecha, el lugar y cuántos invitados esperas.</p>
         </li>
         <li class="mo-ph__ch">
           <figure class="mo-ph__pic"><img src="img/web/carrito-dorilocos.jpg" alt="Carrito de dorilocos listo para servir" width="1200" height="1600" data-source="client" data-subject="carrito de dorilocos"></figure>
-          <h3><span class="sp-step">02</span>Reserva</h3>
+          <h3>Reserva</h3>
           <p>Apartas la fecha con el 50% de anticipo y te enviamos por escrito todo lo que incluye tu servicio.</p>
         </li>
         <li class="mo-ph__ch">
           <figure class="mo-ph__pic"><img src="img/web/mesa-completa.jpg" alt="Carrito blanco con el sello de Snack Paradise, charolas y bolsas de papas" width="1200" height="1600" data-source="client" data-subject="montaje de carrito"></figure>
-          <h3><span class="sp-step">03</span>Montaje</h3>
+          <h3>Montaje</h3>
           <p>El equipo llega con anticipación e instala el carrito antes de que entre el primer invitado.</p>
         </li>
         <li class="mo-ph__ch">
           <figure class="mo-ph__pic"><img src="img/web/evento-ninos.jpg" alt="Estación de fruta y snacks en una fiesta en jardín" width="872" height="861" data-source="client" data-subject="servicio en fiesta"></figure>
-          <h3><span class="sp-step">04</span>Servicio y retiro</h3>
+          <h3>Servicio y retiro</h3>
           <p>Dos personas atienden a tus invitados durante el servicio y al terminar nos llevamos todo.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="section sp-rules" id="politicas" aria-labelledby="politicas-h">
+  <section class="section mx-rules" id="politicas" aria-labelledby="politicas-h">
     <div class="wrap">
-      <div class="grid grid--top">
-        <div class="span-4 sp-rules__aside">
-          <h2 id="politicas-h">Reglas claras, <span class="sp-ink-brand">cero sorpresas</span></h2>
+      <div class="mx-rules__grid">
+        <div class="mx-rules__aside">
+          <h2 id="politicas-h">Reglas claras, cero sorpresas</h2>
           <p>Todo queda por escrito antes de tu evento: qué incluye, cuándo llegamos y cómo se paga.</p>
-          <figure class="sp-rules__pic"><img src="img/web/manos-vaso.jpg" alt="Invitado sosteniendo un vaso de snacks frente al sello de Snack Paradise" loading="lazy" data-source="client" data-subject="invitado con vaso"></figure>
+          <figure class="mx-rules__pic"><img src="img/web/manos-vaso.jpg" alt="Invitado sosteniendo un vaso de snacks frente al sello de Snack Paradise" loading="lazy" data-source="client" data-subject="invitado con vaso"></figure>
         </div>
-        <div class="span-8 sp-rules__grid">
-          <article class="sp-rule"><span class="sp-rule__n">01</span><h3>Reservación y anticipo</h3><p>Apartas la fecha con el 50% del total. El otro 50% se paga cuando llega el personal, antes de montar.</p></article>
-          <article class="sp-rule"><span class="sp-rule__n">02</span><h3>Horario de montaje</h3><p>Llegamos de 1.5 a 2 horas antes, con acceso y corriente listos. Desde las 23:00 aplica un 20% de tarifa nocturna.</p></article>
-          <article class="sp-rule"><span class="sp-rule__n">03</span><h3>Mobiliario y cristalería</h3><p>Bases, tazones, letreros, mantelería y carritos son nuestros. Si un invitado rompe o pierde algo, la reposición la cubre el contratante.</p></article>
-          <article class="sp-rule"><span class="sp-rule__n">04</span><h3>Cancelaciones</h3><p>Con más de 15 días de aviso, el anticipo pasa a otra fecha dentro de 6 meses. Con menos de 7 días no hay reembolso.</p></article>
-          <article class="sp-rule"><span class="sp-rule__n">05</span><h3>Cobertura y fletes</h3><p>Envío incluido en zona urbana de CDMX. Fuera de ella, o con más de dos pisos sin elevador, se cotiza un cargo extra.</p></article>
-          <article class="sp-rule sp-rule--ask"><h3>¿Te queda alguna duda?</h3><p>Escríbenos y te respondemos con tu fecha, lugar y número de invitados.</p><a class="sp-rule__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20tengo%20una%20duda%20sobre%20sus%20pol%C3%ADticas." target="_blank" rel="noopener">Pregunta por WhatsApp</a></article>
+        <div class="mx-rules__list">
+          <article class="mx-rule"><h3>Reservación y anticipo</h3><p>Apartas la fecha con el 50% del total. El otro 50% se paga cuando llega el personal, antes de montar.</p></article>
+          <article class="mx-rule"><h3>Horario de montaje</h3><p>Llegamos de 1.5 a 2 horas antes, con acceso y corriente listos. Desde las 23:00 aplica un 20% de tarifa nocturna.</p></article>
+          <article class="mx-rule"><h3>Mobiliario y cristalería</h3><p>Bases, tazones, letreros, mantelería y carritos son nuestros. Si un invitado rompe o pierde algo, la reposición la cubre el contratante.</p></article>
+          <article class="mx-rule"><h3>Cancelaciones</h3><p>Con más de 15 días de aviso, el anticipo pasa a otra fecha dentro de 6 meses. Con menos de 7 días no hay reembolso.</p></article>
+          <article class="mx-rule"><h3>Cobertura y fletes</h3><p>Envío incluido en zona urbana de CDMX. Fuera de ella, o con más de dos pisos sin elevador, se cotiza un cargo extra.</p></article>
+          <article class="mx-rule mx-rule--ask"><h3>¿Te queda alguna duda?</h3><p>Escríbenos con tu fecha, lugar y número de invitados.</p><a class="mx-rule__cta" href="https://api.whatsapp.com/send?phone=525659145042&amp;text=Hola%2C%20tengo%20una%20duda%20sobre%20sus%20pol%C3%ADticas." target="_blank" rel="noopener">Pregunta por WhatsApp</a></article>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section g2 sp-calc" id="cotizador" aria-labelledby="cotizador-h">
+  <section class="section g2 mx-calc" id="cotizador" aria-labelledby="cotizador-h">
     <div class="wrap">
       <div class="group">
-        <div class="section-head">
-          <h2 id="cotizador-h">Calcula tu evento <span class="sp-ink-brand">en un minuto</span></h2>
-          <p class="measure">Elige invitados, barras y carritos. El total se envía por WhatsApp y te confirmamos disponibilidad.</p>
+        <div class="mx-head">
+          <h2 id="cotizador-h">Calcula tu evento en un minuto</h2>
+          <p>Elige invitados, barras y carritos. El total se envía por WhatsApp y te confirmamos disponibilidad.</p>
         </div>
-        <div class="grid grid--top calc">
-          <div class="span-7 calc__col">
+        <div class="calc calc--top">
+          <div class="calc__col">
             <fieldset class="calc__set">
-              <legend class="t-label"><span class="sp-num" aria-hidden="true">1</span>Tipo de evento</legend>
+              <legend>Tipo de evento</legend>
               <div class="calc__chips" id="calc-event-type">
                 <button type="button" class="calc__chip" data-value="Boda" aria-pressed="true">Boda</button>
                 <button type="button" class="calc__chip" data-value="XV Años" aria-pressed="false">XV años</button>
@@ -258,12 +254,12 @@
               </div>
             </fieldset>
             <div class="calc__set">
-              <div class="calc__row"><label class="t-label" for="guests-slider"><span class="sp-num" aria-hidden="true">2</span>Invitados</label><output for="guests-slider" id="guests-count-display" class="calc__out">100 personas</output></div>
+              <div class="calc__row"><label for="guests-slider">Invitados</label><output for="guests-slider" id="guests-count-display" class="calc__out">100 personas</output></div>
               <input type="range" id="guests-slider" class="calc__range" min="30" max="300" step="10" value="100">
             </div>
-            <div class="field calc__set">
-              <label for="calc-theme"><span class="sp-num" aria-hidden="true">3</span>Estilo de la mesa</label>
-              <select id="calc-theme">
+            <div class="calc__set">
+              <label for="calc-theme">Estilo de la mesa</label>
+              <select id="calc-theme" class="calc__select">
                 <option value="Rústico / Bohemio">Rústico o bohemio: madera, yute y flores</option>
                 <option value="Vintage / Romántico">Vintage o romántico: tonos pastel</option>
                 <option value="Neón">Neón: bases con luz UV</option>
@@ -271,23 +267,23 @@
               </select>
             </div>
           </div>
-          <div class="span-4 start-9 calc__col">
+          <div class="calc__col">
             <fieldset class="calc__set">
-              <legend class="t-label"><span class="sp-num" aria-hidden="true">4</span>Barras</legend>
+              <legend>Barras</legend>
               <label class="calc__opt"><input type="checkbox" name="calc-bars" value="Mesa dulce tradicional" checked><span><b>Mesa dulce</b><small>Gomitas, chocolates y caramelos</small></span></label>
               <label class="calc__opt"><input type="checkbox" name="calc-bars" value="Mesa salada y chilosa" checked><span><b>Mesa salada</b><small>Papas, churritos, cacahuates y chamoy</small></span></label>
             </fieldset>
             <fieldset class="calc__set">
-              <legend class="t-label"><span class="sp-num" aria-hidden="true">5</span>Extras</legend>
+              <legend>Extras</legend>
               <label class="calc__opt"><input type="checkbox" id="calc-addon-staff" checked><span><b>Personal de atención</b><small>2 horas de servicio</small></span></label>
               <label class="calc__opt"><input type="checkbox" id="calc-addon-custom" checked><span><b>Empaques personalizados</b><small>Con logo o nombre del evento</small></span></label>
             </fieldset>
           </div>
         </div>
       </div>
-      <div class="grid grid--top calc">
-        <fieldset class="span-7 calc__set">
-          <legend class="t-label"><span class="sp-num" aria-hidden="true">6</span>Carritos, precio por invitado</legend>
+      <div class="calc calc--bottom">
+        <fieldset class="calc__set calc__carts">
+          <legend>Carritos, precio por invitado</legend>
           <div class="calc__opts">
             <label class="calc__opt"><input type="checkbox" name="calc-carts" value="Carrito de Snacks" data-price="90"><span><b>Snacks</b><small class="calc__price">$90</small><small class="calc__desc">Frituras, fruta, gomitas y cacahuates</small></span></label>
             <label class="calc__opt"><input type="checkbox" name="calc-carts" value="Carrito de Dorilocos" data-price="80"><span><b>Dorilocos</b><small class="calc__price">$80</small><small class="calc__desc">Doritos con toppings y salsas</small></span></label>
@@ -299,8 +295,8 @@
             <label class="calc__opt"><input type="checkbox" name="calc-carts" value="Carrito de Fresas con Crema" data-price="95"><span><b>Fresas con crema</b><small class="calc__price">$95</small><small class="calc__desc">Con cinco toppings y salsas</small></span></label>
           </div>
         </fieldset>
-        <div class="span-4 start-9 calc__sum" aria-live="polite">
-          <p class="t-label muted">Tu estimado</p>
+        <div class="calc__sum" aria-live="polite">
+          <p class="calc__sum-label">Tu estimado</p>
           <p class="calc__total" id="summary-price">$0 <span>MXN</span></p>
           <dl class="calc__dl">
             <div><dt>Evento</dt><dd id="summary-event">Boda</dd></div>
@@ -309,7 +305,7 @@
           </dl>
           <ul class="calc__list" id="summary-bars-list"></ul>
           <button type="button" id="btn-whatsapp-quote" class="btn btn--primary">Cotizar mi evento</button>
-          <p class="t-small muted">Se abre WhatsApp con tu selección. Incluye montaje y transporte en zona urbana.</p>
+          <p class="calc__note">Se abre WhatsApp con tu selección. Incluye montaje y transporte en zona urbana.</p>
         </div>
       </div>
     </div>
@@ -317,15 +313,15 @@
 
 </main>
 
-<footer class="footer closing ground-rosa" id="contact" aria-labelledby="close-h">
+<footer class="footer closing mx-close" id="contact" aria-labelledby="close-h">
   <div class="wrap">
     <div class="closing__cta close--type">
-      <div class="section-head">
+      <div class="mx-close__head">
         <h2 id="close-h">Aparta la fecha de tu evento</h2>
         <p>Los fines de semana se llenan primero. Reservas con el 50% y te confirmamos por escrito.</p>
       </div>
       <a class="btn btn--primary btn--xl btn--wide" href="#cotizador">Cotizar mi evento<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-      <ul class="sp-pledges" aria-label="Nuestros compromisos">
+      <ul class="mx-pledges" aria-label="Nuestros compromisos">
         <li><b>Contrato por escrito</b><span>Lo que incluye tu servicio, antes del evento.</span></li>
         <li><b>Montaje puntual</b><span>Llegamos antes de que entre el primer invitado.</span></li>
         <li><b>Staff capacitado</b><span>Dos personas atienden cada carrito.</span></li>
@@ -333,18 +329,17 @@
       </ul>
     </div>
     <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top"><span class="sp-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="16"/><path d="M9.5 12.5h13l-1.4-3h-10.2zM11 12.5v9.5h10v-9.5M13 22v-4.5h6V22" fill="none" stroke="#fff6ef" stroke-width="1.6" stroke-linejoin="round"/></svg></span>Snack Paradise</a>
-          <p class="footer__lede">Sabores móviles, sonrisas fijas.</p>
+      <div class="mx-foot">
+        <div class="mx-foot__brand">
+          <a class="nav__logo" href="#top"><span class="sp-logo"><img src="img/logo-snack-paradise-web.png" alt="" width="64" height="64"></span>Snack Paradise</a>
+          <p class="mx-motto">Sabores móviles, sonrisas fijas.</p>
         </div>
-        <div class="span-2 start-7 footer__col"><h3>Carritos</h3><ul><li><a href="#carritos">Catálogo</a></li><li><a href="#cotizador">Cotizador</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Empresa</h3><ul><li><a href="#proceso">Proceso</a></li><li><a href="#politicas">Políticas</a></li><li><a href="#incluye">Qué incluye</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Contacto</h3><ul><li><a href="https://api.whatsapp.com/send?phone=525659145042" target="_blank" rel="noopener">WhatsApp 56 5914 5042</a></li><li>CDMX y Área Metropolitana</li></ul></div>
+        <div class="footer__col"><h3>Carritos</h3><ul><li><a href="#carritos">Catálogo</a></li><li><a href="#cotizador">Cotizador</a></li></ul></div>
+        <div class="footer__col"><h3>Empresa</h3><ul><li><a href="#proceso">Proceso</a></li><li><a href="#politicas">Políticas</a></li><li><a href="#incluye">Qué incluye</a></li></ul></div>
+        <div class="footer__col"><h3>Contacto</h3><ul><li><a href="https://api.whatsapp.com/send?phone=525659145042" target="_blank" rel="noopener">WhatsApp 56 5914 5042</a></li><li>CDMX y Área Metropolitana</li></ul></div>
       </div>
       <div class="footer__legal">
         <span>&copy; 2026 Snack Paradise. Precios en pesos mexicanos, sujetos a cambio.</span>
-        <div class="socials"></div>
       </div>
     </div>
   </div>
