@@ -1,167 +1,111 @@
+/* Snack Paradise: the event calculator. Nav, menu, motion and the hover layer come from assets/. */
+const WHATSAPP_PHONE = '525659145042';
 let selectedEventType = 'Boda';
 let guestsCount = 100;
-const whatsappPhone = "525659145042"; 
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-    initMobileMenu();
-    initCalculator();
-});
+document.addEventListener('DOMContentLoaded', initCalculator);
 
-function initMobileMenu() {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn?.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
+function openWhatsApp(message) {
+  window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(message)}`, '_blank', 'noopener');
 }
 
 function initCalculator() {
-    const eventButtons = document.querySelectorAll('.event-type-btn');
-    const slider = document.getElementById('guests-slider');
-    const guestsDisplay = document.getElementById('guests-count-display');
-    const themeSelect = document.getElementById('calc-theme');
-    const barCheckboxes = document.querySelectorAll('input[name="calc-bars"]');
-    const cartCheckboxes = document.querySelectorAll('input[name="calc-carts"]');
-    const staffCheckbox = document.getElementById('calc-addon-staff');
-    const customCheckbox = document.getElementById('calc-addon-custom');
-    const whatsappBtn = document.getElementById('btn-whatsapp-quote');
+  const chips = document.querySelectorAll('.calc__chip');
+  const slider = document.getElementById('guests-slider');
+  const guestsDisplay = document.getElementById('guests-count-display');
 
-    // Manejo de botones de tipo de evento
-    eventButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            eventButtons.forEach(b => {
-                b.classList.remove('ring-2', 'ring-brand-accent', 'bg-pink-50');
-                b.classList.add('bg-white');
-            });
-            btn.classList.add('ring-2', 'ring-brand-accent', 'bg-pink-50');
-            btn.classList.remove('bg-white');
-            selectedEventType = btn.getAttribute('data-value') || 'Boda';
-            updateCalculator();
-        });
-    });
-
-    // Evento del slider de invitados
-    if (slider && guestsDisplay) {
-        slider.addEventListener('input', (e) => {
-            guestsCount = parseInt(e.target.value) || 0;
-            guestsDisplay.textContent = `${guestsCount} personas`;
-            updateCalculator();
-        });
-    }
-
-    // Escuchar cambios en selecciones e inputs
-    themeSelect?.addEventListener('change', updateCalculator);
-    barCheckboxes.forEach(cb => cb.addEventListener('change', updateCalculator));
-    cartCheckboxes.forEach(cb => cb.addEventListener('change', updateCalculator));
-    staffCheckbox?.addEventListener('change', updateCalculator);
-    customCheckbox?.addEventListener('change', updateCalculator);
-
-    whatsappBtn?.addEventListener('click', sendWhatsAppQuote);
-
-    // Calcular el precio inicial
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.setAttribute('aria-pressed', 'false'));
+    chip.setAttribute('aria-pressed', 'true');
+    selectedEventType = chip.dataset.value || 'Boda';
     updateCalculator();
+  }));
+
+  slider?.addEventListener('input', e => {
+    guestsCount = parseInt(e.target.value, 10) || 0;
+    if (guestsDisplay) guestsDisplay.textContent = `${guestsCount} personas`;
+    updateCalculator();
+  });
+
+  document.getElementById('calc-theme')?.addEventListener('change', updateCalculator);
+  document.querySelectorAll('input[name="calc-bars"], input[name="calc-carts"], #calc-addon-staff, #calc-addon-custom')
+    .forEach(cb => cb.addEventListener('change', updateCalculator));
+  document.getElementById('btn-whatsapp-quote')?.addEventListener('click', sendWhatsAppQuote);
+
+  updateCalculator();
+}
+
+function computeTotal() {
+  const bars = document.querySelectorAll('input[name="calc-bars"]:checked').length;
+  let total = 0;
+  document.querySelectorAll('input[name="calc-carts"]:checked').forEach(cb => {
+    total += (parseInt(cb.dataset.price, 10) || 0) * guestsCount;
+  });
+  // base por invitado según cuántas barras tradicionales se eligen, más el montaje base
+  if (bars === 1) total += guestsCount * 38 + 1200;
+  if (bars === 2) total += guestsCount * 48 + 1200;
+  if (total > 0 && document.getElementById('calc-addon-staff')?.checked) total += 600;
+  if (total > 0 && document.getElementById('calc-addon-custom')?.checked) total += 400;
+  return total;
 }
 
 function updateCalculator() {
-    const themeSelect = document.getElementById('calc-theme');
-    const checkedBars = Array.from(document.querySelectorAll('input[name="calc-bars"]:checked')).map(cb => cb.value);
-    
-    // Sumar precios de carritos multiplicados por número de invitados
-    const checkedCartsElements = Array.from(document.querySelectorAll('input[name="calc-carts"]:checked'));
-    const checkedCartsNames = checkedCartsElements.map(cb => cb.value);
-    
-    let cartsTotalPrice = 0;
-    checkedCartsElements.forEach(cb => {
-        const unitPrice = parseInt(cb.getAttribute('data-price') || 0);
-        cartsTotalPrice += unitPrice * guestsCount;
-    });
+  const theme = document.getElementById('calc-theme');
+  const bars = [...document.querySelectorAll('input[name="calc-bars"]:checked')].map(cb => cb.value);
+  const carts = [...document.querySelectorAll('input[name="calc-carts"]:checked')].map(cb => cb.value);
 
-    const staffChecked = document.getElementById('calc-addon-staff')?.checked;
-    const customChecked = document.getElementById('calc-addon-custom')?.checked;
+  setText('summary-event', selectedEventType);
+  setText('summary-guests', `${guestsCount} personas`);
+  if (theme) setText('summary-theme', theme.value);
 
-    // Base por persona según la cantidad de barras tradicionales
-    let baseCostPerGuest = 38; 
-    const activeBarsCount = checkedBars.length;
-    if (activeBarsCount === 0) baseCostPerGuest = 0;
-    else if (activeBarsCount === 2) baseCostPerGuest = 48;
+  const price = document.getElementById('summary-price');
+  if (price) price.innerHTML = `$${computeTotal().toLocaleString('es-MX')} <span>MXN</span>`;
 
-    let total = (guestsCount * baseCostPerGuest) + cartsTotalPrice;
+  const list = document.getElementById('summary-bars-list');
+  if (!list) return;
+  list.replaceChildren();
+  const items = [...bars, ...carts];
+  if (!items.length) {
+    const li = document.createElement('li');
+    li.className = 'is-empty';
+    li.textContent = 'Elige al menos una barra o un carrito.';
+    list.append(li);
+    return;
+  }
+  items.forEach(name => {
+    const li = document.createElement('li');
+    li.textContent = name;
+    list.append(li);
+  });
+}
 
-    if (checkedBars.length > 0) total += 1200; // Montaje base si hay barras tradicionales
-
-    if (staffChecked && total > 0) total += 600;
-    if (customChecked && total > 0) total += 400;
-
-    // Actualizar elementos del resumen en la vista
-    const summaryEvent = document.getElementById('summary-event');
-    const summaryGuests = document.getElementById('summary-guests');
-    const summaryTheme = document.getElementById('summary-theme');
-    const summaryPrice = document.getElementById('summary-price');
-
-    if (summaryEvent) summaryEvent.textContent = selectedEventType;
-    if (summaryGuests) summaryGuests.textContent = `${guestsCount} personas`;
-    if (summaryTheme && themeSelect) summaryTheme.textContent = themeSelect.value.split('(')[0];
-    
-    if (summaryPrice) {
-        summaryPrice.innerHTML = `$${total.toLocaleString('es-MX')} <span class="text-xs font-normal text-slate-300">MXN</span>`;
-    }
-
-    const barsListEl = document.getElementById('summary-bars-list');
-    if (barsListEl) {
-        barsListEl.innerHTML = '';
-        
-        if (checkedBars.length === 0 && checkedCartsNames.length === 0) {
-            barsListEl.innerHTML = '<li class="text-amber-300">Selecciona al menos una barra o carrito</li>';
-        } else {
-            checkedBars.forEach(bar => {
-                const li = document.createElement('li');
-                li.textContent = bar;
-                barsListEl.appendChild(li);
-            });
-            checkedCartsNames.forEach(cart => {
-                const li = document.createElement('li');
-                li.textContent = `🛒 ${cart}`;
-                li.className = 'text-amber-300 font-semibold';
-                barsListEl.appendChild(li);
-            });
-        }
-    }
+function setText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
 }
 
 function sendWhatsAppQuote() {
-    const themeSelect = document.getElementById('calc-theme');
-    const theme = themeSelect ? themeSelect.value : '';
-    
-    // Obtener barras y carritos seleccionados
-    const checkedBars = Array.from(document.querySelectorAll('input[name="calc-bars"]:checked')).map(cb => `• ${cb.value}`).join('\n');
-    const checkedCarts = Array.from(document.querySelectorAll('input[name="calc-carts"]:checked')).map(cb => `• ${cb.value}`).join('\n');
-    
-    const priceEl = document.getElementById('summary-price');
-    const price = priceEl ? priceEl.textContent.trim() : '$0 MXN';
+  const theme = document.getElementById('calc-theme')?.value || '';
+  const bars = [...document.querySelectorAll('input[name="calc-bars"]:checked')].map(cb => `• ${cb.value}`).join('\n');
+  const carts = [...document.querySelectorAll('input[name="calc-carts"]:checked')].map(cb => `• ${cb.value}`).join('\n');
+  const price = document.getElementById('summary-price')?.textContent.trim() || '$0 MXN';
 
-    // Texto del mensaje
-    const message = `¡Hola! Me interesa cotizar un evento con la siguiente configuración:
+  openWhatsApp(`¡Hola! Me interesa cotizar un evento:
 
-📌 *Tipo de Evento:* ${selectedEventType}
+📌 *Tipo de evento:* ${selectedEventType}
 👥 *Invitados:* ${guestsCount} personas
 🎨 *Estilo:* ${theme}
 
-🍬 *Barras Seleccionadas:*
-${checkedBars || 'Ninguna'}
+🍬 *Barras:*
+${bars || 'Ninguna'}
 
-🛒 *Carritos Especiales Seleccionados:*
-${checkedCarts || 'Ninguno'}
+🛒 *Carritos:*
+${carts || 'Ninguno'}
 
-💰 *Costo Estimado:* ${price}
+💰 *Estimado:* ${price}
 
-¿Tienen disponibilidad de agenda?`;
+📅 Fecha:
+📍 Lugar:
 
-    // Uso de encodeURIComponent + api.whatsapp.com para asegurar la entrega del texto en WhatsApp Web / App
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappPhone}&text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappUrl, '_blank');
+¿Tienen disponibilidad?`);
 }

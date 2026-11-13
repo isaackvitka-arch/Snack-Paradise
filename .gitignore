@@ -1,0 +1,6 @@
+# Herramientas de trabajo (perfiles de Chrome del verificador, capturas, skills): no son parte del sitio
+.taste-skill/
+shots/
+.claude/
+.mcp.json
+skills-lock.json
