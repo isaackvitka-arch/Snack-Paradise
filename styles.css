@@ -333,3 +333,11 @@ h3 { font-weight: 800; letter-spacing: .01em; }
   .mx-foot .footer__col, .mx-foot .footer__col:first-of-type { grid-column: auto / span 6; }
   .mx-foot .footer__col:last-child { grid-column: 1 / -1; }
 }
+
+/* ---------- sections grow with their content at every window height, so nothing lies over the next ---------- */
+main > .hero { height: auto; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; }
+main > .hero > .wrap { flex: 1 0 auto; height: auto; }
+main > :is(section, .section):not(.hero):not(.is-live), footer.closing {
+  height: auto; min-height: calc(var(--h, 1) * 100vh); min-height: calc(var(--h, 1) * 100svh); display: flex; flex-direction: column;
+}
+main > :is(section, .section):not(.hero):not(.is-live) > .wrap, footer.closing > .wrap { flex: 1 0 auto; height: auto; }
