@@ -397,3 +397,38 @@ main > :is(section, .section):not(.hero):not(.is-live) > .wrap, footer.closing >
   .mx-cart--cta h3 { font-size: 26px; }
 }
 @media (max-width: 639px) { .mx-star--cta { width: 64px; font-size: 18px; top: var(--s-3); right: var(--s-2); } .mx-cart--cta h3 { font-size: 22px; } .mx-cart--cta p { font-size: 12px; } }
+
+/* ---------- phone: one clean column. Carts and calculator rows read as a price list, photo beside the words ---------- */
+@media (max-width: 639px) {
+  .mx-grid { grid-template-columns: 1fr; border-left: 0; }
+  .mx-carts .wrap > .mx-grid { border-top: 0; }
+  .mx-cart { grid-template-columns: 112px minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: var(--s-4); row-gap: 4px;
+    padding: var(--s-4) 0; border-right: 0; align-items: start; }
+  .mx-cart__media { grid-column: 1; grid-row: 1 / span 3; aspect-ratio: 1; margin: 0; }
+  .mx-cart > h3, .mx-cart > p, .mx-cart > .mx-cta { grid-column: 2; }
+  .mx-cart h3 { font-size: 22px; white-space: normal; padding-right: 0; }
+  .mx-cart p { font-size: 13px; line-height: 1.45; max-width: none; }
+  .mx-cart .mx-cta { font-size: 13px; min-height: 40px; }
+  .mx-star--cart { width: 56px; font-size: 16px; right: -10px; bottom: -10px; }
+  .mx-cart:hover { background: none; }
+  .mx-cart--cta { display: flex; margin-top: var(--s-4); padding: var(--s-5); border: 0; min-height: 0; }
+  .mx-cart--cta h3 { font-size: 30px; padding-right: 72px; }
+  .mx-cart--cta p { font-size: 14px; }
+  .mx-star--cta { width: 70px; font-size: 18px; top: var(--s-4); right: var(--s-4); }
+
+  .calc__select { font-size: 14px; padding: 0 28px 0 10px; }
+  .calc__opts { grid-template-columns: 1fr; }
+  .calc__opts .calc__opt span { grid-template-columns: minmax(0, 1fr) auto; }
+  .calc__opts .calc__price { grid-column: 2; grid-row: 1; margin-top: 0; }
+  .calc__opts .calc__desc { grid-column: 1 / -1; }
+  .calc__opt { min-height: 0; padding: var(--s-3) var(--s-4); }
+  .calc__chips { gap: var(--s-2); }
+  .calc__chip { flex: 1 1 auto; }
+
+  .mx-pledges { grid-template-columns: 1fr; gap: 0; }
+  .mx-pledges li { grid-template-columns: minmax(0, 1fr); padding: var(--s-3) 0; }
+  .mx-pledges b { font-size: 19px; }
+  .mx-close__head h2 { font-size: clamp(44px, 13vw, 60px); }
+  .mx-foot { row-gap: var(--s-4); }
+  .mx-motto { font-size: 26px; }
+}
