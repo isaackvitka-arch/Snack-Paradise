@@ -109,3 +109,17 @@ ${carts || 'Ninguno'}
 
 ¿Tienen disponibilidad?`);
 }
+
+/* Cart photographs uncover as they reach the screen. Nothing is hidden unless this runs. */
+(function revealCarts() {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cards = document.querySelectorAll('.mx-cart:not(.mx-cart--cta)');
+  if (!cards.length) return;
+  document.documentElement.classList.add('mx-reveal-on');
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+  cards.forEach(c => io.observe(c));
+  // never leave a picture covered (print, screenshots, odd scroll containers)
+  setTimeout(() => cards.forEach(c => c.classList.add('is-in')), 4000);
+})();

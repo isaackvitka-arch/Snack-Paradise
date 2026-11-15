@@ -61,7 +61,7 @@ h3 { font-weight: 800; letter-spacing: .01em; }
 .mx-hero__grid { position: relative; height: 100%; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); align-items: end; }
 .mx-hero__copy { grid-column: 1 / span 8; display: grid; gap: var(--s-5); justify-items: start; padding-bottom: var(--s-2); }
 .mx-hero__copy > * { margin: 0 !important; }
-.mx-hero h1 { font-size: clamp(64px, 9.2vw, 152px); line-height: .84; letter-spacing: -0.01em; font-weight: 900; color: var(--paper); max-width: 9.5ch; }
+.mx-hero h1 { font-size: clamp(56px, min(8.8vw, 12.5vh), 150px); line-height: .84; letter-spacing: -0.01em; font-weight: 900; color: var(--paper); max-width: 9.5ch; }
 .mx-hero h1 span { display: block; color: var(--lime); }
 .mx-hero__lead { font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; color: #e4d9cc; max-width: 46ch; }
 .mx-star--hero { grid-column: 10 / span 3; justify-self: end; align-self: start; position: relative; width: clamp(180px, 17vw, 250px); aspect-ratio: 1;
@@ -103,7 +103,7 @@ h3 { font-weight: 800; letter-spacing: .01em; }
 .mx-cart[data-tint="orange"] .mx-star > svg { fill: var(--orange); }
 .mx-star--word { font-size: 25px; }
 .mx-star--word b { max-width: 4ch; line-height: .85; }
-.mx-cart h3 { margin: 0; font-size: clamp(24px, 2.1vw, 32px); line-height: 1; padding-right: 80px; }
+.mx-cart h3 { margin: 0; font-size: clamp(22px, 1.9vw, 30px); line-height: 1; padding-right: 36px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mx-cart p { margin: 0; font-size: var(--t-small); line-height: 1.5; color: var(--p-muted); max-width: 34ch; }
 .mx-cta { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; justify-self: start;
   color: var(--paper); font-weight: 700; font-size: var(--t-small); text-decoration: none; }
@@ -341,3 +341,59 @@ main > :is(section, .section):not(.hero):not(.is-live), footer.closing {
   height: auto; min-height: calc(var(--h, 1) * 100vh); min-height: calc(var(--h, 1) * 100svh); display: flex; flex-direction: column;
 }
 main > :is(section, .section):not(.hero):not(.is-live) > .wrap, footer.closing > .wrap { flex: 1 0 auto; height: auto; }
+
+/* ---------- the call-to-the-calculator cell that closes the tray grid ---------- */
+.mx-cart--cta { display: flex; flex-direction: column; justify-content: flex-end; gap: var(--s-3); min-height: 100%; padding: var(--s-5) var(--s-4) var(--s-3);
+  background: var(--lime); color: var(--shade); text-decoration: none; overflow: hidden; }
+.mx-cart--cta:hover { background: #e6ff7a; }
+.mx-cart--cta h3 { color: var(--shade); white-space: normal; overflow: visible; padding-right: 0; font-size: clamp(30px, 2.8vw, 44px); line-height: 1; padding-top: .1em; }
+.mx-cart--cta p { color: #2c3508; }
+.mx-cart--cta .mx-cta { color: var(--shade); }
+.mx-cart--cta .mx-cta::before { background: var(--shade); }
+.mx-star--cta { top: var(--s-4); right: var(--s-4); width: 112px; aspect-ratio: 1; font-size: 30px; transform: rotate(-10deg); }
+.mx-star--cta > svg { fill: var(--pink); }
+.mx-cart--cta:hover .mx-star--cta { transform: rotate(0deg) scale(1.06); }
+
+/* ---------- animated frames: a fluorescent ring that travels round the key pictures ---------- */
+@property --frame-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.mx-frame { --frame: 6px; position: relative; isolation: isolate; }
+.mx-frame::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: conic-gradient(from var(--frame-angle), var(--pink), var(--orange), var(--lime), var(--pink));
+  animation: mx-frame-spin 7s linear infinite; }
+@keyframes mx-frame-spin { to { --frame-angle: 360deg; } }
+.mx-incl__pic.mx-frame, .mx-rules__pic.mx-frame { overflow: visible; }
+.mx-incl__pic.mx-frame img { inset: var(--frame); width: calc(100% - var(--frame) * 2); height: calc(100% - var(--frame) * 2); }
+.mx-rules__pic.mx-frame { padding: var(--frame); box-sizing: border-box; }
+.mx-incl .mx-frame::before { background: conic-gradient(from var(--frame-angle), var(--shade), var(--pink), var(--shade), var(--orange), var(--shade)); }
+.mx-rules .mx-frame::before { background: conic-gradient(from var(--frame-angle), var(--shade), var(--lime), var(--shade), var(--orange), var(--shade)); }
+.calc__sum.mx-frame { --frame: 4px; }
+.calc__sum.mx-frame::before { background: conic-gradient(from var(--frame-angle), var(--orange), var(--lime), var(--pink), var(--orange)); }
+.calc__sum.mx-frame::after { content: ""; position: absolute; inset: var(--frame); z-index: -1; background: var(--orange); }
+
+/* the hero photograph breathes: a slow push-in, never a jump */
+.mx-hero__img { animation: mx-push 22s ease-in-out infinite alternate; transform-origin: 60% 45%; }
+@keyframes mx-push { from { transform: scale(1); } to { transform: scale(1.08); } }
+
+/* the price stars float a little, out of step, like cards hung on a string */
+.mx-star--cart, .mx-star--hero, .mx-star--cta { animation: mx-float 3.6s ease-in-out infinite alternate; }
+.mx-cart:nth-child(2n) .mx-star--cart { animation-delay: -1.2s; }
+.mx-cart:nth-child(3n) .mx-star--cart { animation-delay: -2.4s; }
+@keyframes mx-float { from { translate: 0 0; } to { translate: 0 -6px; } }
+
+/* the cart photographs are uncovered as they reach the screen (only once the script is running) */
+.mx-reveal-on .mx-cart__media img { clip-path: inset(0 0 100% 0); transition: clip-path 900ms var(--ease-out), transform 700ms var(--ease-out); }
+.mx-reveal-on .mx-cart.is-in .mx-cart__media img { clip-path: inset(0 0 0 0); }
+.mx-reveal-on .mx-cart.is-in:nth-child(2) .mx-cart__media img { transition-delay: 90ms; }
+.mx-reveal-on .mx-cart.is-in:nth-child(3) .mx-cart__media img { transition-delay: 180ms; }
+.mx-reveal-on .mx-cart.is-in:nth-child(4) .mx-cart__media img { transition-delay: 270ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mx-frame::before, .mx-hero__img, .mx-star--cart, .mx-star--hero, .mx-star--cta { animation: none !important; }
+  .mx-reveal-on .mx-cart__media img { clip-path: none !important; transition: none !important; }
+}
+@media (max-width: 1023px) {
+  .mx-cart h3 { white-space: normal; }
+  .mx-star--cta { width: 80px; font-size: 22px; }
+  .mx-cart--cta h3 { font-size: 26px; }
+}
+@media (max-width: 639px) { .mx-star--cta { width: 64px; font-size: 18px; top: var(--s-3); right: var(--s-2); } .mx-cart--cta h3 { font-size: 22px; } .mx-cart--cta p { font-size: 12px; } }
